@@ -6,7 +6,12 @@ class App
 
     function __construct()
     {
-        $this->__controller = 'home';
+        global $routes;
+
+        if(!empty($routes['default_controller'])) {
+            $this->__controller = $routes['default_controller'];
+        }
+
         $this->__action = 'index';
         $this->__params = [];
         $this->handleUrl();
