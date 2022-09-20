@@ -14,15 +14,23 @@ class Product extends Controller
         $product = $this->model('ProductModel');
         $dataProduct = $product->getProductList();
 
-        $this->data['product/list'] = $dataProduct;
+        $title = 'List product';
+
+        $this->data['sub_content']['product_list'] = $dataProduct;
+        $this->data['sub_content']['page_title'] = $title;
+        $this->data['page_title'] = $title;
+        $this->data['content'] = 'products/list';
         // render views
-        $this->render('products/list', $this->data);
+        $this->render('layouts/client_layout', $this->data);
     }
 
     public function detail($id=0)
     {
         $product = $this->model('ProductModel');
-        $this->data['info'] = $product->getDetail($id);
-        $this->render('products/detail', $this->data);
+        $this->data['sub_content']['info'] = $product->getDetail($id);
+        $this->data['sub_content']['page_title'] = 'Product details';
+        $this->data['page_title'] = 'Product details';
+        $this->data['content'] = 'products/detail';
+        $this->render('layouts/client_layout', $this->data);
     }
 }

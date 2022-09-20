@@ -1,5 +1,1 @@
-PRODUCT DETAILS
-
-<?php 
-    echo $info;
-?>
+PRODUCT DETAIL

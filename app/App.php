@@ -60,11 +60,11 @@ class App
         }
 
         // handle params
-        $this->__param = array_values($urlArr);
+        $this->__params = array_values($urlArr);
 
         // check method
         if(method_exists($this->__controller, $this->__action)) {
-            call_user_func_array([$this->__controller, $this->__action], $this->__param);
+            call_user_func_array([$this->__controller, $this->__action], $this->__params);
         } else {
             $this->loadError();
         }

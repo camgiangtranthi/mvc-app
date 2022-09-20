@@ -13,6 +13,5 @@ class Home extends Controller
         $data = $this->model_home->getList();
 
         $details = $this->model_home->getDetails(0);
-        print_r($details);
     }
 }
