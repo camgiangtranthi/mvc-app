@@ -15,5 +15,6 @@ $web_root = $web_root.$folder;
 define('_WEB_ROOT', $web_root);
 
 require_once 'configs/routes.php';
+require_once 'core/Route.php';
 require_once 'app/App.php';
 require_once 'core/Controller.php';
